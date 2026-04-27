@@ -1,7 +1,6 @@
 services:
   db:
     image: postgres:15
-    container_name: url-db
     restart: always
     environment:
       POSTGRES_DB: url_db
@@ -17,7 +16,6 @@ services:
 
   app:
     build: .
-    container_name: url-app
     restart: always
     depends_on:
       db:
@@ -32,7 +30,6 @@ services:
 
   jenkins:
     image: jenkins/jenkins:lts
-    container_name: jenkins
     privileged: true
     user: root
     ports:
