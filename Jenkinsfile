@@ -45,8 +45,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                   docker-compose down || true
-                   docker-compose up -d --no-build app db
+                   docker-compose -p url_project down
+                   docker-compose -p url_project up -d --no-build app db
                 '''
             }
         }
