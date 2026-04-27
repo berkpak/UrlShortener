@@ -15,8 +15,7 @@ services:
       retries: 5
 
   app:
-    build: .
-    restart: always
+    image: url-shortener:latest
     depends_on:
       db:
         condition: service_healthy
