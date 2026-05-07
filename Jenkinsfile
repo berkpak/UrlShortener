@@ -51,6 +51,12 @@ pipeline {
             }
         }
 
+        stage('Deploy to Kubernetes') {
+            steps {
+                sh 'kubectl apply -f .'
+            }
+        }
+
         stage('Health Check') {
             steps {
                 sh '''
